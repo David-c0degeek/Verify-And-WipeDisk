@@ -5,7 +5,7 @@ function Format-SizeGB ($bytes) {
 
 # Step 1: Show all disks
 Write-Host "`n=== Available Disks ===" -ForegroundColor Cyan
-Get-Disk | Sort-Object Number | Format-Table -AutoSize Number FriendlyName SerialNumber Size HealthStatus OperationalStatus PartitionStyle
+Get-Disk | Sort-Object Number | Format-Table -AutoSize -Property Number, FriendlyName, SerialNumber, Size, HealthStatus, OperationalStatus, PartitionStyle
 
 # Step 2: Prompt for disk selection
 $diskNumber = Read-Host "`nEnter the disk number you want to verify and optionally wipe"
